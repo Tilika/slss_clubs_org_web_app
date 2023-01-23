@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 class President(models.Model):
     name = models.CharField(max_length=100)
-    grade = models.CharField(max_length=100)
+    grade = models.IntegerField(default=0)
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)
-    grade = models.CharField(max_length=100)
+    room_number = models.IntegerField(default=0)
 
 class Club(models.Model):
     description = models.CharField(max_length=200)
