@@ -38,3 +38,26 @@ class Event(models.Model):
     def __str__(self):
         return(f"{self.club.club_name} is hosting a {self.event_type} on {self.date_and_time}")
 
+
+    """
+    class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    student_number = models.IntegerField("Student Number")
+    year_of_graduation = models.IntegerField("Year of Graduation")
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    """Create a Student object when a new user is created"""
+
+    if created and not instance.is_superuser:
+        Student.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, created, **kwargs):
+    """If a profile is saved, save information in table"""
+
+    if created:
+        Student.objects.create(user=instance)
+    """
