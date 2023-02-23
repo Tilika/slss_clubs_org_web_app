@@ -48,7 +48,7 @@ class Event(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-    """Create a Student object when a new user is created"""
+    '''Create a Student object when a new user is created'''
 
     if created and not instance.is_superuser:
         Student.objects.create(user=instance)
@@ -56,7 +56,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, created, **kwargs):
-    """If a profile is saved, save information in table"""
+    '''If a profile is saved, save information in table'''
 
     if created:
         Student.objects.create(user=instance)
