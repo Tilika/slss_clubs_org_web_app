@@ -23,4 +23,3 @@ def event_view(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
 
     return render(request, "shark_club_org/events.html", {"event": event})
-

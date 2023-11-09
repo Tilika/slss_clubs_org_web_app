@@ -15,7 +15,7 @@ class Sponsor(models.Model):
     room_number = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.name}, grade {self.room_number}"
+        return f"{self.name}, room number {self.room_number}"
 
 
 class Club(models.Model):
@@ -65,4 +65,3 @@ class Event(models.Model):
 
         if created:
             Student.objects.create(user=instance)"""
-
