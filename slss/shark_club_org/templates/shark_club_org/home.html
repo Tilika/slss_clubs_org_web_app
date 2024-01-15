@@ -1,0 +1,14 @@
+<h2>Events for various clubs</h2>
+<h2></h2>
+{% block content %}
+{% for club in clubs %}
+{% if forloop.counter == 1%}
+<h2>Events for <a href="./events/1">{{ club.club_name }}</a> club</h2>
+{% elif forloop.counter == 2%}
+<h2>Events for <a href="./events/2">{{ club.club_name }}</a> club</h2>
+{% elif forloop.counter == 3%}
+<h2>Events for <a href="./events/3">{{ club.club_name }}</a> club</h2>
+{% elif forloop.counter == 4%}
+<h2>Events for <a href="./events/4">{{ club.club_name }}</a> club</h2>
+{% endif %}
+{% endfor %} {% endblock %}

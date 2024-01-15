@@ -1,0 +1,15 @@
+{% block content %}
+{% if not eventsc %}
+<h1> No events announced for this club... </h1>
+{% endif %}
+{% for event in eventsc%}
+<h1>Club:        {{ event.club }}</h1>
+<h1>Event Type:  {{ event.event_type }}</h1>
+<h1>Location:    {{ event.location }}</h1>
+<h1>Date & Time: {{ event.date_and_time }}</h1>
+<h1>
+        Topic: {{ event.agenda }}
+</h1>
+<br>
+<br>
+{% endfor%} {% endblock %}
